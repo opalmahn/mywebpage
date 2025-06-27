@@ -1,0 +1,142 @@
+/* Custom font import - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
+}
+.section-title {
+    position: relative;
+    font-weight: 700; /* Bold */
+    margin-bottom: 1.5rem; /* Margin bottom */
+    padding-bottom: 0.5rem; /* Padding bottom */
+    display: inline-block; /* Inline block */
+    color: #374151; /* Default title color */
+    transition: color 0.3s ease;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50%; /* Half width underline */
+    height: 4px; /* Thickness */
+    background-color: #6366f1; /* Indigo color */
+    border-radius: 9999px; /* Rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+/* Dark mode styles */
+html.dark {
+    /* Main background and text */
+    background-color: #1a202c; /* Darker background */
+    color: #e2e8f0; /* Lighter text */
+}
+html.dark body {
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+html.dark .section-title {
+    color: #e2e8f0; /* Lighter title color in dark mode */
+}
+html.dark .section-title::after {
+    background-color: #a78bfa; /* Lighter indigo for dark mode underline */
+}
+html.dark .bg-white {
+    background-color: #2d3748; /* Darker card background */
+    color: #e2e8f0;
+}
+html.dark .text-gray-700 {
+    color: #cbd5e0; /* Lighter gray for text */
+}
+html.dark .text-gray-800 {
+    color: #e2e8f0; /* Lighter gray for text */
+}
+html.dark .text-gray-600 {
+    color: #a0aec0; /* Lighter gray for text */
+}
+html.dark .text-gray-900 {
+    color: #f7fafc; /* Lighter gray for text */
+}
+html.dark .border-gray-200 {
+    border-color: #4a5568; /* Darker border */
+}
+html.dark .bg-indigo-50 {
+    background-color: #4338ca; /* Darker indigo for skills */
+    color: #e0e7ff;
+}
+html.dark .bg-gray-200 {
+    background-color: #4a5568; /* Darker gray for skill/project tags */
+    color: #e2e8f0;
+}
+html.dark .text-indigo-600 {
+    color: #a78bfa; /* Lighter indigo for links */
+}
+html.dark .hover\:text-indigo-800:hover {
+    color: #c4b5fd; /* Even lighter indigo on hover */
+}
+
+/* Scroll-to-top button styles */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* 20px from the bottom */
+    right: 30px; /* 30px from the right */
+    z-index: 99; /* Make sure it's on top */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #6366f1; /* Indigo background */
+    color: white; /* White text */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50%; /* Rounded corners (circle) */
+    font-size: 18px; /* Increase font size */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #4f46e5; /* Darker indigo on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Flipping Card Specific Styles */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.flipping-card {
+    transform-style: preserve-3d;
+    transition: transform 0.7s; /* Explicit transition for the flip */
+}
+
+.group:hover .flipping-card {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    -webkit-backface-visibility: hidden; /* For Safari */
+    backface-visibility: hidden;
+    /* Ensure front and back occupy the same space */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.75rem; /* rounded-xl */
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* Dark mode adjustments for the flipping card */
+html.dark .card-front {
+    background-color: #2d3748; /* Darker background for front card in dark mode */
+}
+html.dark .card-front h2 {
+    color: #f7fafc; /* Lighter text for name */
+}
+html.dark .card-front p {
+    color: #a0aec0; /* Lighter text for title/hover message */
+}
+html.dark .border-indigo-200 {
+    border-color: #6366f1; /* Adjust border color for dark mode photo */
+}
